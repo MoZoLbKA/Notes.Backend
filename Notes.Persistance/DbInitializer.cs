@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Notes.Persistance
 {
-    internal class DbInitializer
+    public class DbInitializer
     {
+        public void Initialize(NotesDbContext context)
+        {
+            context.Database.EnsureCreated();
+        }
     }
 }
