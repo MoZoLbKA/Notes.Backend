@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Notes.Domain;
 
 
-namespace Notes.Persistance.EntityTipeConfiguration
+namespace Notes.Persistance.EntityTypeConfiguration
 {
     internal class NoteConfiguration : IEntityTypeConfiguration<Note>
     {
