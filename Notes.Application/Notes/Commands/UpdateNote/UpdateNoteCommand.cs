@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Notes.Application.Notes.Commands
+namespace Notes.Application.Notes.Commands.UpdateNote
 {
-    internal class UpdateNoteCommand:IRequest<Unit>
+    public class UpdateNoteCommand : IRequest<Unit>
     {
         public Guid UserId { get; set; }
         public Guid Id { get; set; }

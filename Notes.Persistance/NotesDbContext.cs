@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Notes.Application.Intrerfaces;
 using Notes.Domain;
-using Notes.Persistance.EntityTipeConfiguration;
+using Notes.Persistance.EntityTypeConfiguration;
 using System;
 using System.Collections.Generic;
 using System.Linq;

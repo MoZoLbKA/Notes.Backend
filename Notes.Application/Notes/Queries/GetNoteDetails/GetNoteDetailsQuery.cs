@@ -1,12 +1,16 @@
-﻿using System;
+﻿using MediatR;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Notes.Application.Notes.Queries
+namespace Notes.Application.Notes.Queries.GetNoteDetails
 {
-    internal class GetNoteDetailsQuery
+    public class GetNoteDetailsQuery : IRequest<NoteDetailsVm>
     {
+        public Guid Id { get; set; }
+        public Guid UserId { get; set; }
+
     }
 }

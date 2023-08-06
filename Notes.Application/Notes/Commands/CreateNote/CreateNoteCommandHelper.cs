@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Notes.Application.Notes.Commands
+namespace Notes.Application.Notes.Commands.CreateNote
 {
-    internal class CreateNoteCommandHelper : IRequestHandler<CreateNoteCommand, Guid>
+    public class CreateNoteCommandHelper : IRequestHandler<CreateNoteCommand, Guid>
     {
         private readonly INotesDbContext _context;
         public CreateNoteCommandHelper(INotesDbContext context)
@@ -24,7 +24,7 @@ namespace Notes.Application.Notes.Commands
                 Title = request.Title,
                 Details = request.Details,
                 Id = Guid.NewGuid(),
-                CreationDate = DateTime.Now,   
+                CreationDate = DateTime.Now,
             };
             await _context.Notes.AddAsync(note, cancellationToken);
             await _context.SaveChangesAsync(cancellationToken);

@@ -9,9 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Notes.Application.Notes.Commands
+namespace Notes.Application.Notes.Commands.UpdateNote
 {
-    internal class UpdateNoteCommandHandler : IRequestHandler<UpdateNoteCommand,Unit>
+    public class UpdateNoteCommandHandler : IRequestHandler<UpdateNoteCommand, Unit>
     {
         private readonly INotesDbContext _context;
         public UpdateNoteCommandHandler(INotesDbContext context)
@@ -20,11 +20,11 @@ namespace Notes.Application.Notes.Commands
         }
         public async Task<Unit> Handle(UpdateNoteCommand request, CancellationToken cancellationToken)
         {
-            var entity = await _context.Notes.FirstOrDefaultAsync(note => note.Id == request.Id, 
+            var entity = await _context.Notes.FirstOrDefaultAsync(note => note.Id == request.Id,
                 cancellationToken);
             if (entity == null || entity.UserId != request.UserId)
             {
-                throw new NotFoundException(nameof(Note),request.Id);
+                throw new NotFoundException(nameof(Note), request.Id);
             }
             entity.Details = request.Details;
             entity.Title = request.Title;
@@ -33,6 +33,6 @@ namespace Notes.Application.Notes.Commands
             return Unit.Value;
         }
 
-        
+
     }
 }

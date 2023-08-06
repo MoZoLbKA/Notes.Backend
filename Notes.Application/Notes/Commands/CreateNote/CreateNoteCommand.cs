@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Notes.Application.Notes.Commands
+namespace Notes.Application.Notes.Commands.CreateNote
 {
     public class CreateNoteCommand : IRequest<Guid>
     {
