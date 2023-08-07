@@ -8,7 +8,7 @@ namespace Notes.Persistance
 {
     public class DbInitializer
     {
-        public void Initialize(NotesDbContext context)
+        public static void Initialize(NotesDbContext context)
         {
             context.Database.EnsureCreated();
         }
